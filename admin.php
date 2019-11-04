@@ -10,7 +10,7 @@ if(isset($_POST['login']) )
     if($count=="1")
     {
         $_SESSION['username']=$name;
-        header('location: subfile/admin/theme_admin.php');
+        header('location: subfile/admin/index_ad.php');
     }
     else{
        echo"Login Fail";

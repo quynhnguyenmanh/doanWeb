@@ -6,6 +6,6 @@
     $id=$_GET['id'];
     $data = $pdh->query("delete from users where id='$id'");
     $del = $data->fetch();
-    header('location: theme_admin.php');
+    header('location: index_ad.php#home3');
     }
 ?>

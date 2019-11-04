@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 02, 2019 at 08:52 AM
+-- Generation Time: Nov 04, 2019 at 10:12 AM
 -- Server version: 10.1.40-MariaDB
 -- PHP Version: 7.3.5
 
@@ -236,7 +236,12 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `ten`, `taiKhoan`, `matKhau`, `email`, `phanQuyen`, `ngayDangKy`, `anhDaiDien`) VALUES
 (99, 'Admin', 'admin', 'Phuclk', 'Admin@gmail.com', 0, '2017-11-01 14:17:34', 'public/images/logo_macdinh.png'),
-(118, 'asdf', 'asdf', 'asdfasdf123', 'asdf@gmail.com', 0, '2019-11-02 13:50:56', 'public/images/logo_macdinh.png');
+(118, 'asdf', 'asdf', 'asdfasdf123', 'asdf@gmail.com', 0, '2019-11-02 13:50:56', 'public/images/logo_macdinh.png'),
+(126, 'zxcvzxc', 'user1', '123', 'asdc@gmail.com', 0, '2019-11-04 16:00:45', 'public/images/logo_macdinh.png'),
+(127, 'zxcvzxc', 'user2', '123', 'asdc@gmail.com', 0, '2019-11-04 16:01:22', 'public/images/logo_macdinh.png'),
+(128, 'zxcvzxc', 'user3', '123', 'asdc@gmail.com', 0, '2019-11-04 16:01:22', 'public/images/logo_macdinh.png'),
+(129, 'zxcvzxc', 'user4', '123', 'asdc@gmail.com', 0, '2019-11-04 16:01:22', 'public/images/logo_macdinh.png'),
+(130, 'zxcvzxc', 'user5', '123', 'asdc@gmail.com', 0, '2019-11-04 16:01:22', 'public/images/logo_macdinh.png');
 
 --
 -- Indexes for dumped tables
@@ -341,7 +346,7 @@ ALTER TABLE `theloai`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
