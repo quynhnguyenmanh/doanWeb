@@ -63,7 +63,8 @@
     <!-- ##### Buy Now Area End ##### -->
 
     <!-- ##### Featured Artist Area Start ##### -->
-    <section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url(img/bg-img/bg-4.jpg);">
+    <section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed"
+        style="background-image: url(img/bg-img/bg-4.jpg);">
         <?php
             include "subfile/index/FeaturedArtistArea.php";
         ?>
@@ -79,7 +80,8 @@
     <!-- ##### Miscellaneous Area End ##### -->
 
     <!-- ##### Contact Area Start ##### -->
-    <section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img" style="background-image: url(img/bg-img/bg-2.jpg);">
+    <section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img"
+        style="background-image: url(img/bg-img/bg-2.jpg);">
         <?php
             include "subfile/index/ContactArea.php";
         ?>
@@ -92,9 +94,14 @@
             <div class="row d-flex flex-wrap align-items-center">
                 <div class="col-12 col-md-6">
                     <a href="#"><img src="img/core-img/logo.png" alt=""></a>
-                    <p class="copywrite-text"><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    <p class="copywrite-text"><a href="#">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>
+                            document.write(new Date().getFullYear());
+                            </script> All rights reserved | This template is made with <i class="fa fa-heart-o"
+                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
                 </div>
 
                 <div class="col-12 col-md-6">

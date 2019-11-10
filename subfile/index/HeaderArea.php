@@ -1,3 +1,7 @@
+<?php
+if (!isset($_SESSION)) session_start();
+unset($_SESSION['user']);
+?>
 <!-- Navbar Area -->
 <div class="oneMusic-main-menu">
             <div class="classy-nav-container breakpoint-off">
@@ -63,7 +67,16 @@
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Login/Register -->
                                     <div class="login-register-btn mr-50">
+                                    <?php
+                                    if (!isset($_SESSION['user']))
+                                    {?>
                                         <a href="login.php" id="loginBtn">Login / Register</a>
+                                        <?php
+                                    }
+                                    else{
+                                        echo "Hi, ".$_SESSION['user'];
+                                    }
+                                        ?>
                                     </div>
 
                                     <!-- Cart Button
