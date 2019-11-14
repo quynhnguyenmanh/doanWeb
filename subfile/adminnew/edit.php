@@ -44,13 +44,13 @@
     <section id="container" class="">
         <!--header start-->
         <?php
-          include("../../subfile/adminnew/model/index/header.php");
+        include("../../subfile/adminnew/model/index/header.php");
         ?>
         <!--header end-->
 
         <!--sidebar start-->
         <?php
-          include("../../subfile/adminnew/model/index/sidebar.php");
+        include("../../subfile/adminnew/model/index/sidebar.php");
         ?>
         <!--sidebar end-->
 
@@ -66,64 +66,61 @@
                             <li><i class="icon_genius"></i>Widgets</li>
                     </div>
                     <form action="subfunction/edit_user.php" method="post">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-10 col-md-offset-1">
-                                <div class="panel panel-default panel-table">
-                                    <div class="panel-heading">
-                                        <div class="row">
-                                            <div class="col col-xs-6">
-                                                <h3 class="panel-title">Điền thông tin cần cập nhật</h3>
-                                            </div>
-                                            <div class="col col-xs-6 text-right">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="panel panel-default panel-table">
+                                        <div class="panel-heading">
+                                            <div class="row">
+                                                <div class="col col-xs-6">
+                                                    <h3 class="panel-title">Điền thông tin cần cập nhật</h3>
+                                                </div>
+                                                <div class="col col-xs-6 text-right">
 
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="panel-body">
-                                        <table class="table table-striped table-bordered table-list">
-                                            <thead>
-                                                <tr>
-                                                    <th class="hidden-xs">Mã số</th>
-                                                    <th>Họ tên</th>
-                                                    <th>Email</th>
-                                                    <th>Tài khoản</th>
-                                                    <th>Mật Khẩu</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php
-                                                //unset($_SESSION['user']);
-                                                $pdh = new PDO("mysql:host=localhost; dbname=db_nhac", "root", "");
-                                                $pdh->query("  set names 'utf8'");
-                                                $id=$_GET['m'];
-                                                $data = $pdh->prepare("select * from users where id= ?");
-                                                $data->execute(array($id));
-                                                $nhac = $data->fetch(PDO::FETCH_ASSOC);
-                                                ?>
-
-                                                <tr method="post">
-                                                
-                                                    <a class="btn btn-danger" href="subfunction/edit_user.php"><em
-                                                            class="fa fa-pencil"></em></a>
-                                                    <td class="hidden-xs" name="m"><?php echo $nhac['id'] ?></td>
-                                                    <td><input type="text" name="t" value="<?php echo $nhac['ten']?>">
-                                                    </td>
-                                                    <td><input type="text" name="e"
-                                                            value="<?php echo $nhac['email']?>"></td>
-                                                    <td><input type="text" name="tk"
-                                                            value="<?php echo $nhac['taiKhoan']?>"></td>
-                                                    <td><input type="text" name="mk"
-                                                            value="<?php echo $nhac['matKhau']?>"></td>
-                                       
-                                                </tr>                                          
-                                            </tbody>
-                                        </table>
+                                        <div class="panel-body">
+                                            <table class="table table-striped table-bordered table-list">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="hidden-xs">Mã số</th>
+                                                        <th>Họ tên</th>
+                                                        <th>Email</th>
+                                                        <th>Tài khoản</th>
+                                                        <th>Mật Khẩu</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <?php
+                                                    //unset($_SESSION['user']);
+                                                    $pdh = new PDO("mysql:host=localhost; dbname=db_nhac", "root", "");
+                                                    $pdh->query("  set names 'utf8'");
+                                                    print_r($_GET);
+                                                    $id = $_GET['m'];
+                                                    $data = $pdh->prepare("select * from users where id= ?");
+                                                    $data->execute(array($id));
+                                                    $nhac = $data->fetch(PDO::FETCH_ASSOC);
+                                                    ?>
+                                                    <tr>
+                                                        <form action="subfunction/edit_user.php" method="post">
+                                                            <input type="submit" value="sua">
+                                                            <td><input type="text" name="m" value="<?php echo $nhac['id'] ?>">
+                                                            </td>
+                                                            <td><input type="text" name="ten" value="<?php echo $nhac['ten'] ?>">
+                                                            </td>
+                                                            <td><input type="text" name="email" value="<?php echo $nhac['email'] ?>"></td>
+                                                            <td><input type="text" name="taiKhoan" value="<?php echo $nhac['taiKhoan'] ?>"></td>
+                                                            <td><input type="text" name="matKhau" value="<?php echo $nhac['matKhau'] ?>"></td>
+                                                        </form>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     </form>
 
                 </div>
@@ -149,8 +146,8 @@
     <script src="js/scripts.js"></script>
 
     <script>
-    //knob
-    $(".knob").knob();
+        //knob
+        $(".knob").knob();
     </script>
 
 </body>

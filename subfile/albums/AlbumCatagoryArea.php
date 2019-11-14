@@ -38,18 +38,18 @@
             <?php
                 $pdh = new PDO("mysql:host=localhost; dbname=db_nhac", "root", "");
                 $pdh->query("  set names 'utf8'");
-                $data = $pdh->query("select * from baihat limit 0,18");
+                $data = $pdh->query("select * from baihat join casi on baihat.maCaSi=casi.maCaSi limit 0,18");
                 $nhac = $data->fetchAll();
                 foreach ($nhac as $key => $r) { ?>
                 <!-- Single Album -->
                 <div class="col-12 col-sm-4 col-md-3 col-lg-2 single-album-item t c p">
-                    <div class="single-album">
+                    <div class="single-album" style="width:150px;height:250px">
                         <img src="img/hinhcasi/<?php echo $r['Hinhcasi'] ?>" alt="">
                         <div class="album-info">
-                            <a href="#">
+                        <a href="trangbaihat.php?id=<?php echo $r['maBaiHat'] ?>">
                                 <h5><?php echo $r['tenBaiHat'] ?></h5>
                             </a>
-                            <p><?php echo $r['caSi'] ?></p>
+                            <p><?php echo $r['tenCaSi'] ?></p>
                         </div>
                     </div>
                 </div>

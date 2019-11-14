@@ -65,7 +65,7 @@
                             <li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
                             <li><i class="icon_genius"></i>Widgets</li>
                     </div>
-                    <form action="subfunction/edit_user.php" method="post">
+                    <form action="subfunction/create.php" method="post">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-10 col-md-offset-1">
@@ -84,7 +84,7 @@
                                             <table class="table table-striped table-bordered table-list">
                                                 <thead>
                                                     <tr>
-                                
+                                                    <th class="hidden-xs">Mã số</th>
                                                         <th>Họ tên</th>
                                                         <th>Email</th>
                                                         <th>Tài khoản</th>
@@ -95,9 +95,10 @@
                                                
 
                                                     <tr>
-                                                        <form action="" method="post">
-                                                        <a class="btn btn-default" href="subfunction/create.php"><i class="fa fa-plus" aria-hidden="true"></i></a>
-                                                        
+                                                        <form action="subfunction/create.php" method="post">
+                                                        <input type="submit" value="THem">
+                                                        <td><input type="text" name="m" disabled>
+                                                        </td>
                                                         <td><input type="text" name="t">
                                                         </td>
                                                         <td><input type="text" name="e"></td>

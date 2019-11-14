@@ -64,7 +64,7 @@
                             <li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
                             <li><i class="icon_genius"></i>Widgets</li>
                     </div>
-                    <form action="" method="post">
+                    <form action="" method="get">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-10 col-md-offset-1">
