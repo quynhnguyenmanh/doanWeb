@@ -21,16 +21,16 @@
                 <?php
                 $pdh = new PDO("mysql:host=localhost; dbname=db_nhac", "root", "");
                 $pdh->query("  set names 'utf8'");
-                $data = $pdh->query("select * from albums limit 0,7");
+                $data = $pdh->query("select * from albums join casi on albums.maCaSi=casi.maCaSi limit 0,7");
                 $nhac = $data->fetchAll();
                 foreach ($nhac as $key => $r) { ?>
                     <!-- Single Album -->
                     <div class="single-album">
                         <img src="img/bg-img/albums/<?php echo $r['artworkPath'] ?>" alt="">
                         <div class="album-info">
-                            <a href="page_music.php?id=<?php echo $r['id']?>">
+                            <a href="page_music.php?id=<?php echo $r['maAlbum']?>">
                                 <h5> <?php echo $r['tenAlbum'] ?></h5>
-                                <p><?php echo $r['caSi'] ?></p>
+                                <p><?php echo $r['tenCaSi'] ?></p>
                             </a>
                             
                         </div>

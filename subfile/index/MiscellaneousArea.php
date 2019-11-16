@@ -89,7 +89,7 @@
                 <?php
                 $pdh = new PDO("mysql:host=localhost; dbname=db_nhac", "root", "");
                 $pdh->query("  set names 'utf8'");
-                $data = $pdh->query("select * from baihat limit 0,6");
+                $data = $pdh->query("select * from baihat join casi on baihat.maCaSi=casi.maCaSi limit 0,6");
                 $nhac = $data->fetchAll();
                 foreach ($nhac as $key => $r) { ?>
                 <div class="single-new-item d-flex align-items-center justify-content-between wow fadeInUp"
@@ -100,7 +100,7 @@
                         </div>
                         <div class="content-">
                             <h6><?php echo $r['tenBaiHat'] ?></h6>
-                            <p><?php echo $r['caSi'] ?></p>
+                            <p><?php echo $r['tenCaSi'] ?></p>
                         </div>
                     </div>
                     <audio preload="auto" controls>

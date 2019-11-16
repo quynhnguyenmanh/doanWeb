@@ -1,4 +1,3 @@
-<!-- Quynh them vao ngay cho thang tien -->
 <!DOCTYPE html>
 <html lang="en">
 
