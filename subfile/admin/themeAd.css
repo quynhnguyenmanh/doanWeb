@@ -1,31 +1,36 @@
-body{
+body {
     margin: 0;
     padding: 0;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    overflow: hidden;
-  
+    overflow: scroll;
 }
-input[type="checkbox"]{
+
+input[type="checkbox"] {
     position: fixed;
     right: 20px;
     top: 20px;
     width: 50px;
     height: 50px;
     z-index: 100000;
-    cursor: pointer; /*hover vào để chuột thay đổi cái checkbox*/
-    opacity: 0;/*làm mất cái hộp check*/
+    cursor: pointer;
+    /*hover vào để chuột thay đổi cái checkbox*/
+    opacity: 0;
+    /*làm mất cái hộp check*/
 }
-.icon{
+
+.icon {
     position: fixed;
     right: 20px;
     top: 20px;
     width: 50px;
     height: 50px;
     z-index: 100001;
-    pointer-events: none; /*không cho nó check box */
+    pointer-events: none;
+    /*không cho nó check box */
     background: black;
 }
-.icon:before{
+
+.icon:before {
     content: 'Close';
     position: absolute;
     top: 0;
@@ -35,13 +40,14 @@ input[type="checkbox"]{
     color: #ffffff;
     text-align: center;
     line-height: 50px;
-    
     font-weight: 700;
 }
-input[type="checkbox"]:checked ~ .icon::before{
+
+input[type="checkbox"]:checked~.icon::before {
     content: 'Menu';
 }
-ul{
+
+ul {
     position: fixed;
     top: 0;
     left: 0;
@@ -55,13 +61,17 @@ ul{
     z-index: 100000;
     overflow-y: auto;
 }
-input[type="checkbox"]:checked ~ ul{
-    left: -230px;/*thu MENU về*/
+
+input[type="checkbox"]:checked~ul {
+    left: -230px;
+    /*thu MENU về*/
 }
-ul li{
+
+ul li {
     list-style: none;
 }
-ul li a{
+
+ul li a {
     display: block;
     color: white;
     padding: 10px;
@@ -71,33 +81,53 @@ ul li a{
     font-weight: 700;
     transition: 0.5s;
 }
-ul li a:hover{
+
+#H {
+    margin: 0 0 0 155px;
+    font-size: 25px;
+}
+
+#U {
+    margin: 0 0 0 68px;
+}
+
+#M {
+    margin: 0 0 0 40px;
+}
+
+#E {
+    margin: 0 0 0 55px;
+}
+
+ul li a:hover {
     transform: translateX(20px);
     color: red;
     text-decoration: none;
 }
-section{
+
+section {
     position: relative;
-    left:170px;
+    left: 170px;
     padding: 100px;
     box-sizing: border-box;
     transition: 0.5s;
-   
-    
 }
-input[type="checkbox"]:checked ~ section{
+
+input[type="checkbox"]:checked~section {
     left: 0;
 }
-section h2{
+
+section h2 {
     margin: 0;
     padding: 0;
     font-size: 30px;
     top: 20px;
 }
-html{
+
+html {
     scroll-behavior: smooth;
 }
-section h2{
+
+section h2 {
     text-align: center;
 }
-

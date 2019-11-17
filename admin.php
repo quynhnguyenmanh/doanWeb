@@ -1,4 +1,5 @@
 <?php
+if (!isset($_SESSION)) session_start();
 $pdh = new PDO("mysql:host=localhost; dbname=db_nhac", "root", "");
 $pdh->query("  set names 'utf8'");
 if(isset($_POST['login']) )
@@ -6,10 +7,12 @@ if(isset($_POST['login']) )
     $name=$_POST['username'];
     $pass=$_POST['password'];
     $data = $pdh->query("select * from admin where user='$name' and password='$pass'");
-    $count=$data->fetchColumn();
+    $r=$data->fetch();
+    $count=$data->rowCount();
     if($count=="1")
     {
-        $_SESSION['username']=$name;
+        $_SESSION["username"]=$r['hoTen'];
+        //print_r($_SESSION["username"]);
         header('location: subfile/admin/index_ad.php');
     }
     else{
