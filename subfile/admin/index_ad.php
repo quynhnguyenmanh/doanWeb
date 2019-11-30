@@ -87,10 +87,9 @@ if (!isset($_SESSION)) session_start();
                                 {?>
 
                                     <tr>
-                                        <td align="center"><a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                                            <a class="btn btn-danger"
-                                                href="delete_user.php?id=<?php echo $r['id']?>"><em
-                                                    class="fa fa-trash"></em></a>
+                                        <td align="center">
+                                            <a class="btn btn-default" href="edit.php?id=<?php echo $r['id']?>"><em class="fa fa-pencil"></em></a>
+                                            <a class="btn btn-danger" href="delete_user.php?id=<?php echo $r['id']?>"><em class="fa fa-trash"></em></a>
                                         </td>
                                         <td class="hidden-xs"><?php echo $r['id'] ?></td>
                                         <td><?php echo $r['ten'] ?></td>

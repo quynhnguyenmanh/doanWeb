@@ -70,7 +70,7 @@ if (!isset($_SESSION)) session_start();
                                 <?php
                                     if (!isset($_SESSION['user']))
                                     {?>
-                                <a href="login.php" id="loginBtn">Login / Register</a>
+                                        <a href="login.php" id="loginBtn">Login / Register</a>
                                     <?php
                                     }
                                     else{

@@ -2,10 +2,10 @@
 -- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 10, 2019 at 05:25 AM
+-- Host: localhost
+-- Generation Time: Nov 28, 2019 at 06:51 PM
 -- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.10
+-- PHP Version: 7.1.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -31,15 +31,16 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
   `user` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(50) NOT NULL,
+  `hoTen` varchar(250) CHARACTER SET utf8 DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `user`, `password`) VALUES
-(1, 'admin', 'admin');
+INSERT INTO `admin` (`id`, `user`, `password`, `hoTen`) VALUES
+(1, 'admin', 'admin', 'Phương Khải Nhân');
 
 -- --------------------------------------------------------
 
@@ -238,10 +239,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `ten`, `taiKhoan`, `matKhau`, `email`, `phanQuyen`, `ngayDangKy`, `anhDaiDien`) VALUES
 (99, 'Admin', 'admin', 'Phuclk', 'Admin@gmail.com', 0, '2017-11-01 14:17:34', 'public/images/logo_macdinh.png'),
 (118, 'asdf', 'asdf', 'asdfasdf123', 'asdf@gmail.com', 0, '2019-11-02 13:50:56', 'public/images/logo_macdinh.png'),
-(127, 'Phương Khải Nhân', 'user2', '123', 'asdc@gmail.com', 0, '2019-11-04 16:01:22', 'public/images/logo_macdinh.png'),
-(128, 'zxcvzxc', 'user3', '123', 'asdc@gmail.com', 0, '2019-11-04 16:01:22', 'public/images/logo_macdinh.png'),
-(129, 'zxcvzxc', 'user4', '123', 'asdc@gmail.com', 0, '2019-11-04 16:01:22', 'public/images/logo_macdinh.png'),
-(130, 'zxcvzxc', 'user5', '123', 'asdc@gmail.com', 0, '2019-11-04 16:01:22', 'public/images/logo_macdinh.png');
+(127, 'Phương Khải Nhân', 'user2', '123', 'asdc@gmail.com', 0, '2019-11-04 16:01:22', 'public/images/logo_macdinh.png');
 
 --
 -- Indexes for dumped tables
