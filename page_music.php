@@ -34,7 +34,7 @@
     <!-- ##### Header Area Start ##### -->
     <header class="header-area">
         <?php
-        include "subfile/page_music/HeaderArea.php";
+        include "subfile/index/HeaderArea.php";
         ?>
     </header>
     <!-- ##### Header Area End ##### -->

@@ -1,3 +1,7 @@
+<?php
+if (!isset($_SESSION)) session_start();
+//unset($_SESSION['user']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,24 +14,26 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"
         type="text/css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="theme.css">
-    <link rel="stylesheet" href="stylead.css">
+    <link rel="stylesheet" href="themeAd.css">
     <link rel="stylesheet" href="header.css">
     <title>Document</title>
 </head>
 
 <body>
     <nav>
-        <p>Chỗ này hiển thị thông tin ad vs logout</p>
+        <p><?php echo "Hi admin, " .$_SESSION['username']?></p>
+        
     </nav>
 
     <input type="checkbox" name="" checked="">
     <span class="icon"></span>
     <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#home1">Quản lý file nhạc</a></li>
-        <li><a href="#home2">Home2</a></li>
-        <li><a href="#home3">Quản Lý User</a></li>
+        <li><a href="#home">Home<i class="fa fa-home" aria-hidden="true" id="H"></i></a></li>
+        <li><a href="#home1">Quản lý file nhạc<i class="fa fa-music" aria-hidden="true" id="M"></i></a></li>
+        <li><a href="#home2">Quản lý sự kiện<i class="fa fa-calendar-o" aria-hidden="true" id="E"></i></a></li>
+        <li><a href="#home3">Quản Lý User<i class="fa fa-users" aria-hidden="true" id="U"></i></a></li>
         <li><a href="#home4">Thông tin user</a></li>
         <li><a href="#home5">Home5</a></li>
     </ul>
@@ -81,10 +87,9 @@
                                 {?>
 
                                     <tr>
-                                        <td align="center"><a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                                            <a class="btn btn-danger"
-                                                href="delete_user.php?id=<?php echo $r['id']?>"><em
-                                                    class="fa fa-trash"></em></a>
+                                        <td align="center">
+                                            <a class="btn btn-default" href="edit.php?id=<?php echo $r['id']?>"><em class="fa fa-pencil"></em></a>
+                                            <a class="btn btn-danger" href="delete_user.php?id=<?php echo $r['id']?>"><em class="fa fa-trash"></em></a>
                                         </td>
                                         <td class="hidden-xs"><?php echo $r['id'] ?></td>
                                         <td><?php echo $r['ten'] ?></td>
