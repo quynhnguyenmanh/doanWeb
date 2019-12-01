@@ -55,6 +55,7 @@
         <!--sidebar end-->
 
         <!--main content start-->
+
         <section id="main-content">
             <section class="wrapper">
                 <div class="row">
@@ -64,7 +65,7 @@
                             <li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
                             <li><i class="icon_genius"></i>Widgets</li>
                     </div>
-                    <form action="" method="post">
+                    <form action="subfunction/edit_user.php" method="post">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-10 col-md-offset-1">
@@ -72,17 +73,17 @@
                                     <div class="panel-heading">
                                         <div class="row">
                                             <div class="col col-xs-6">
-                                                <h3 class="panel-title">Danh sách các user đã đăng kí</h3>
+                                                <h3 class="panel-title">Điền thông tin cần cập nhật</h3>
                                             </div>
-                                           
+                                            <div class="col col-xs-6 text-right">
+
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="panel-body">
                                         <table class="table table-striped table-bordered table-list">
                                             <thead>
                                                 <tr>
-                                                    <th><em class="fa fa-cog"></em>
-                                                    </th>
                                                     <th class="hidden-xs">Mã số</th>
                                                     <th>Họ tên</th>
                                                     <th>Email</th>
@@ -91,34 +92,31 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            <a class="btn btn-default" href="create_user.php"><i class="fa fa-plus" aria-hidden="true"></i></a>
                                                 <?php
-                                $pdh = new PDO("mysql:host=localhost; dbname=db_nhac", "root", "");
-                                $pdh->query("set names 'utf8'");
-                                $data = $pdh->query("select * from users");
-                                $nhac = $data->fetchAll(PDO::FETCH_OBJ);
-                                
-                                foreach ($nhac as $key => $r)
-                                {?>
-                                        
-                                                <tr>
-                                                    <td align="center">
-                                                        <a class="btn btn-default"
-                                                            href="edit.php?m=<?php echo $r->id?>"><em class="fa fa-pencil"></em></a>
-                                                        <a class="btn btn-danger"
-                                                            href="subfunction/delete_user.php?id=<?php echo $r->id?>"><em class="fa fa-trash"></em></a>
-                                                       
-                                                    </td>
-                                                    <td class="hidden-xs"><?php echo $r->id;?></td>
-                                                    <td><?php echo $r->ten;?></td>
-                                                    <td><?php echo $r->email; ?></td>
-                                                    <td><?php echo $r->taiKhoan; ?></td>
-                                                    <td><?php echo $r->matKhau; ?></td>
-                                                </tr>
-                                                <?php
-                                }
-                                ?>
+                                                //unset($_SESSION['user']);
+                                                $pdh = new PDO("mysql:host=localhost; dbname=db_nhac", "root", "");
+                                                $pdh->query("  set names 'utf8'");
+                                                $id=$_GET['m'];
+                                                $data = $pdh->prepare("select * from users where id= ?");
+                                                $data->execute(array($id));
+                                                $nhac = $data->fetch(PDO::FETCH_ASSOC);
+                                                ?>
 
+                                                <tr method="post">
+                                                
+                                                    <a class="btn btn-danger" href="subfunction/edit_user.php"><em
+                                                            class="fa fa-pencil"></em></a>
+                                                    <td class="hidden-xs" name="m"><?php echo $nhac['id'] ?></td>
+                                                    <td><input type="text" name="t" value="<?php echo $nhac['ten']?>">
+                                                    </td>
+                                                    <td><input type="text" name="e"
+                                                            value="<?php echo $nhac['email']?>"></td>
+                                                    <td><input type="text" name="tk"
+                                                            value="<?php echo $nhac['taiKhoan']?>"></td>
+                                                    <td><input type="text" name="mk"
+                                                            value="<?php echo $nhac['matKhau']?>"></td>
+                                       
+                                                </tr>                                          
                                             </tbody>
                                         </table>
                                     </div>
@@ -127,11 +125,13 @@
                         </div>
                     </div>
                     </form>
+
                 </div>
 
                 <!-- page end-->
             </section>
         </section>
+
         <!--main content end-->
 
     </section>
